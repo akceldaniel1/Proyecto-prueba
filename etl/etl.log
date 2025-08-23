@@ -1,0 +1,80 @@
+2025-08-23 12:31:12,102 - INFO -  Iniciando proceso ETL de proyectos de ley...
+2025-08-23 12:31:12,109 - INFO -  Tabla 'proyectos_ley' verificada/creada
+2025-08-23 12:31:12,109 - INFO -  Conectando a: https://www.camara.gov.co/secretaria/proyectos-de-ley
+2025-08-23 12:31:12,841 - INFO -  Extraídos 20 registros de proyectos de ley
+2025-08-23 12:31:12,859 - INFO -  Proceso ETL completado. Total registros: 20
+2025-08-23 12:38:17,154 - INFO -    - proyectos_ley: 20 registros
+2025-08-23 12:38:17,155 - INFO -    - sqlite_sequence: 1 registros
+2025-08-23 12:38:17,156 - INFO -    - id (INTEGER)
+2025-08-23 12:38:17,156 - INFO -    - no_camara (TEXT)
+2025-08-23 12:38:17,156 - INFO -    - no_senado (TEXT)
+2025-08-23 12:38:17,156 - INFO -    - proyecto (TEXT)
+2025-08-23 12:38:17,159 - INFO -    - tipo (TEXT)
+2025-08-23 12:38:17,159 - INFO -    - autor (TEXT)
+2025-08-23 12:38:17,159 - INFO -    - estado (TEXT)
+2025-08-23 12:38:17,159 - INFO -    - comision (TEXT)
+2025-08-23 12:38:17,159 - INFO -    - origen (TEXT)
+2025-08-23 12:38:17,159 - INFO -    - legislatura (TEXT)
+2025-08-23 12:38:17,159 - INFO -    - fecha_extraccion (TEXT)
+2025-08-23 12:38:23,256 - INFO -  Mostrando primeros 10 registros de 20:
+2025-08-23 12:38:23,256 - INFO - --------------------------------------------------------------------------------
+2025-08-23 12:38:23,257 - INFO - ID: 1
+2025-08-23 12:38:23,257 - INFO - Proyecto: CONCURSO DEPARTAMENTAL BANDAS SAMANIEGO
+2025-08-23 12:38:23,257 - INFO - Autor: Ermes Evelio Pete Vivas, Etna Tamara Argote Calderón, Leyla Marleny Rincón Trujillo, Jorge Andrés Cancimance López, Ruth Amelia Caycedo Rosero, Juan Daniel Peñuela Calvache, Teresa De Jesús Enríquez Rosero, Gabriel Ernesto Parrado Durán, Juan Pablo Salazar RiveraRichard Humberto Fuelantala Delgado, Diela Liliana Solarte Benavides, Carlos Alberto Benavides Mora, Robert Daza Guevara
+2025-08-23 12:38:23,257 - INFO - Estado: Trámite en Comisión
+2025-08-23 12:38:23,257 - INFO - Extracción: 2025-08-23 12:31:12
+2025-08-23 12:38:23,257 - INFO - --------------------------------------------------------------------------------
+2025-08-23 12:38:23,257 - INFO - ID: 2
+2025-08-23 12:38:23,257 - INFO - Proyecto: REFORMA AL DEPORTE
+2025-08-23 12:38:23,258 - INFO - Autor: Juan Camilo Londoño Barrera, Aníbal Gustavo Hoyos Franco, Juan Daniel Peñuela Calvache, María Eugenia Lopera Monsalve, Gerardo Yepes Caro, Elkin Rodolfo Ospina Ospina, Juan Sebastián Gómez Gonzáles, Camilo Esteban Ávila Morales, Daniel Carvalho MejíaNorma Hurtado Sánchez, Angélica lisbeth lozano correa
+2025-08-23 12:38:23,258 - INFO - Estado: Trámite en Comisión
+2025-08-23 12:38:23,258 - INFO - Extracción: 2025-08-23 12:31:12
+2025-08-23 12:38:23,258 - INFO - --------------------------------------------------------------------------------
+2025-08-23 12:38:23,258 - INFO - ID: 3
+2025-08-23 12:38:23,258 - INFO - Proyecto: PATRIMONIO CULTURAL SANTA CRUZ DE MOMPOX
+2025-08-23 12:38:23,258 - INFO - Autor: Enrique Cabrales Baquero
+2025-08-23 12:38:23,258 - INFO - Estado: Trámite en Comisión
+2025-08-23 12:38:23,258 - INFO - Extracción: 2025-08-23 12:31:12
+2025-08-23 12:38:23,258 - INFO - --------------------------------------------------------------------------------
+2025-08-23 12:38:23,259 - INFO - ID: 4
+2025-08-23 12:38:23,259 - INFO - Proyecto: LICENCIA DE MATERNIDAD LN Y R
+2025-08-23 12:38:23,259 - INFO - Autor: Aníbal Gustavo Hoyos Franco
+2025-08-23 12:38:23,259 - INFO - Estado: Trámite en Comisión
+2025-08-23 12:38:23,259 - INFO - Extracción: 2025-08-23 12:31:12
+2025-08-23 12:38:23,259 - INFO - --------------------------------------------------------------------------------
+2025-08-23 12:38:23,259 - INFO - ID: 5
+2025-08-23 12:38:23,259 - INFO - Proyecto: 250 AÑOS DE EL CARMEN DE BOLIVAR
+2025-08-23 12:38:23,259 - INFO - Autor: Enrique Cabrales Baquero
+2025-08-23 12:38:23,259 - INFO - Estado: Trámite en Comisión
+2025-08-23 12:38:23,259 - INFO - Extracción: 2025-08-23 12:31:12
+2025-08-23 12:38:23,260 - INFO - --------------------------------------------------------------------------------
+2025-08-23 12:38:23,260 - INFO - ID: 6
+2025-08-23 12:38:23,260 - INFO - Proyecto: PICO Y PLACA PERSONAS CON DISCAPACIDAD
+2025-08-23 12:38:23,260 - INFO - Autor: Wilmer Yair Castellanos Hernández, Jaime Raúl Salamanca Torres, Gloria Liliana Rodríguez ValenciaAna carolina Espitia Jerez, Laura Esther Fortich Sanchez, Carlos Julio González Villa, Diela Liliana Solarte Benavides, Soledad Tamayo Tamayo
+2025-08-23 12:38:23,260 - INFO - Estado: Trámite en Comisión
+2025-08-23 12:38:23,260 - INFO - Extracción: 2025-08-23 12:31:12
+2025-08-23 12:38:23,260 - INFO - --------------------------------------------------------------------------------
+2025-08-23 12:38:23,260 - INFO - ID: 7
+2025-08-23 12:38:23,260 - INFO - Proyecto: EDUCACIÓN PERSONAS CON DISCAPACIDAD
+2025-08-23 12:38:23,260 - INFO - Autor: Laura Esther Fortich Sanchez, Soledad Tamayo Tamayo, Beatriz Lorena Ríos Cuellar
+2025-08-23 12:38:23,260 - INFO - Estado: Trámite en Comisión
+2025-08-23 12:38:23,260 - INFO - Extracción: 2025-08-23 12:31:12
+2025-08-23 12:38:23,261 - INFO - --------------------------------------------------------------------------------
+2025-08-23 12:38:23,261 - INFO - ID: 8
+2025-08-23 12:38:23,261 - INFO - Proyecto: HONORES 500 AÑOS DE POPAYAN
+2025-08-23 12:38:23,261 - INFO - Autor: Christian Munir Garcés Aljure, Eduard Alexis Triana Rincón, Hernán Darío Cadavid Márquez, Andrés Eduardo Forero Molina, Edinson Vladimir Olaya Mancipe, Óscar Darío Pérez Pineda, José Jaime Uscátegui Pastrana, Jaime Rodríguez Contreras, Hugo Danilo Lozano Pimiento, Piedad Correal Rubiano, Oscar Rodrigo Campo HurtadoPaloma Susana Valencia Laserna, Oscar Barreto Quiroga, Paola Andrea Holguín Moreno, Alfredo Rafael Deluque Zuleta, Richard Humberto Fuelantala Delgado, Jonathan Ferney Pulido Hernández, Enrique Cabrales Baquero, Carlos Manuel Meisel Vergara, Esteban Quintero Cardona, José Vicente Carreño Castro, Germán Alcides Blanco Álvarez, Paulino Riascos Riascos, Maria Fernanda Cabal Molina, Miguel Ángel Pinto Hernández, Jaime Enrique Durán Barrera, Laura Esther Fortich Sanchez, Claudia María Pérez Giraldo, Mauricio Gómez Amín, Oscar Mauricio Giraldo Hernández, Efraín José Cepeda Sarabia
+2025-08-23 12:38:23,261 - INFO - Estado: Trámite en Comisión
+2025-08-23 12:38:23,261 - INFO - Extracción: 2025-08-23 12:31:12
+2025-08-23 12:38:23,261 - INFO - --------------------------------------------------------------------------------
+2025-08-23 12:38:23,261 - INFO - ID: 9
+2025-08-23 12:38:23,261 - INFO - Proyecto: HONORES PORFIRIO BARBA JACOB
+2025-08-23 12:38:23,262 - INFO - Autor: Sor Berenice Bedoya Pérez
+2025-08-23 12:38:23,262 - INFO - Estado: Trámite en Comisión
+2025-08-23 12:38:23,262 - INFO - Extracción: 2025-08-23 12:31:12
+2025-08-23 12:38:23,262 - INFO - --------------------------------------------------------------------------------
+2025-08-23 12:38:23,262 - INFO - ID: 10
+2025-08-23 12:38:23,262 - INFO - Proyecto: PATRIMONIO CULTURAL TENERIFE
+2025-08-23 12:38:23,262 - INFO - Autor: Sandra Milena Ramírez Caviedes
+2025-08-23 12:38:23,262 - INFO - Estado: Trámite en Comisión
+2025-08-23 12:38:23,262 - INFO - Extracción: 2025-08-23 12:31:12
+2025-08-23 12:38:23,263 - INFO - --------------------------------------------------------------------------------

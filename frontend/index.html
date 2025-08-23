@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyectos de Ley - Congreso de Colombia</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app">
+        <!-- Header -->
+        <header class="header">
+            <h1> Proyectos de Ley</h1>
+            <p>Congreso de Colombia - Visualización de Datos</p>
+        </header>
+
+        <!-- Buscador -->
+        <div class="search-container">
+            <input 
+                v-model="searchTerm" 
+                @input="buscarProyectos" 
+                placeholder="Buscar proyectos por palabra clave..."
+                class="search-input"
+            >
+            <button @click="limpiarBusqueda" class="clear-btn">Limpiar</button>
+        </div>
+
+        <!-- Estadísticas -->
+        <div class="stats">
+            <span> Total de proyectos: {{ totalProyectos }}</span>
+            <span v-if="searchTerm">🔍 Resultados de búsqueda: {{ proyectos.length }}</span>
+        </div>
+
+        <!-- Tabla de proyectos -->
+        <div class="table-container">
+            <table v-if="proyectos.length > 0">
+                <thead>
+                    <tr>
+                        <th @click="ordenarPor('id')">ID ↗</th>
+                        <th @click="ordenarPor('proyecto')">Proyecto ↗</th>
+                        <th @click="ordenarPor('autor')">Autor ↗</th>
+                        <th @click="ordenarPor('estado')">Estado ↗</th>
+                        <th @click="ordenarPor('fecha_extraccion')">Fecha ↗</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr v-for="proyecto in proyectos" :key="proyecto.id" 
+                        @click="seleccionarProyecto(proyecto)"
+                        :class="{ 'selected': proyectoSeleccionado?.id === proyecto.id }">
+                        <td>{{ proyecto.id }}</td>
+                        <td class="project-title">{{ proyecto.proyecto }}</td>
+                        <td>{{ proyecto.autor }}</td>
+                        <td>
+                            <span class="estado-badge" :class="getEstadoClass(proyecto.estado)">
+                                {{ proyecto.estado || 'Sin estado' }}
+                            </span>
+                        </td>
+                        <td>{{ formatoFecha(proyecto.fecha_extraccion) }}</td>
+                        <td>
+                            <button @click.stop="verDetalles(proyecto)" class="btn-details">
+                                 Ver
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <div v-else class="empty-state">
+                <p> No se encontraron proyectos</p>
+                <p v-if="searchTerm">Intenta con otros términos de búsqueda</p>
+            </div>
+        </div>
+
+        <!-- Modal de detalles -->
+        <div v-if="mostrarModal" class="modal-overlay" @click.self="cerrarModal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2> Detalles del Proyecto</h2>
+                    <button @click="cerrarModal" class="close-btn">×</button>
+                </div>
+                
+                <div v-if="proyectoSeleccionado" class="modal-body">
+                    <div class="detail-grid">
+                        <div class="detail-item">
+                            <label>ID:</label>
+                            <span>{{ proyectoSeleccionado.id }}</span>
+                        </div>
+                        <div class="detail-item">
+                            <label>Proyecto:</label>
+                            <span class="detail-value">{{ proyectoSeleccionado.proyecto }}</span>
+                        </div>
+                        <div class="detail-item">
+                            <label>Autor:</label>
+                            <span>{{ proyectoSeleccionado.autor }}</span>
+                        </div>
+                        <div class="detail-item">
+                            <label>Tipo:</label>
+                            <span>{{ proyectoSeleccionado.tipo || 'No especificado' }}</span>
+                        </div>
+                        <div class="detail-item">
+                            <label>Estado:</label>
+                            <span class="estado-badge" :class="getEstadoClass(proyectoSeleccionado.estado)">
+                                {{ proyectoSeleccionado.estado || 'Sin estado' }}
+                            </span>
+                        </div>
+                        <div class="detail-item">
+                            <label>Comisión:</label>
+                            <span>{{ proyectoSeleccionado.comision || 'No especificado' }}</span>
+                        </div>
+                        <div class="detail-item">
+                            <label>Origen:</label>
+                            <span>{{ proyectoSeleccionado.origen || 'No especificado' }}</span>
+                        </div>
+                        <div class="detail-item">
+                            <label>Legislatura:</label>
+                            <span>{{ proyectoSeleccionado.legislatura || 'No especificado' }}</span>
+                        </div>
+                        <div class="detail-item">
+                            <label>No. Cámara:</label>
+                            <span>{{ proyectoSeleccionado.no_camara || 'N/A' }}</span>
+                        </div>
+                        <div class="detail-item">
+                            <label>No. Senado:</label>
+                            <span>{{ proyectoSeleccionado.no_senado || 'N/A' }}</span>
+                        </div>
+                        <div class="detail-item full-width">
+                            <label>Fecha de extracción:</label>
+                            <span>{{ formatoFecha(proyectoSeleccionado.fecha_extraccion) }}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Loading -->
+        <div v-if="cargando" class="loading">
+            <div class="spinner"></div>
+            <p>Cargando proyectos...</p>
+        </div>
+
+        <!-- Error -->
+        <div v-if="error" class="error">
+            <p>❌ Error: {{ error }}</p>
+            <button @click="cargarProyectos" class="retry-btn">Reintentar</button>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
